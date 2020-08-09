@@ -1,0 +1,19 @@
+.logo {
+  display: grid;
+  grid-template-rows: min-content;
+  align-content: center;
+  line-height: 1.1;
+
+  &__top {
+    text-transform: uppercase;
+    color: var(--cl-main);
+    font-size: 1.2rem;
+  }
+
+  &__bot {
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family: var(--font-secondary);
+    font-size: 3rem;
+  }
+}

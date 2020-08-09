@@ -1,0 +1,131 @@
+.section-contacts {
+  &__content {
+    @include centerBlock;
+    @include sectionPadding;
+
+    display: grid;
+    grid-row-gap: 2rem;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+
+    @media only screen and (max-width: 1042px) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 2rem;
+    }
+  }
+
+  &__left {
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+
+    & div:nth-child(3) {
+      grid-column: span 2;
+      @media only screen and (max-width: 478px) {
+        grid-column: auto;
+      }
+    }
+
+    @media only screen and (max-width: 478px) {
+      grid-template-columns: 1fr;
+    }
+
+    & button {
+      justify-self: start;
+    }
+
+    &--inputholder {
+      display: grid;
+      grid-row-gap: 4px;
+    }
+
+    &--label {
+      font-size: 1.4rem;
+    }
+
+    &--input {
+      order: 1;
+      font-family: var(--font-primary);
+      font-size: 16px;
+      border: none;
+      outline: none;
+      box-shadow: 0.2rem 0.2rem 0.2rem var(--cl-shadow) inset;
+      background-color: var(--cl-form);
+      padding: 0.8rem 1rem;
+
+      &:focus ~ label {
+        color: var(--cl-main);
+      }
+    }
+
+    &--area {
+      order: 1;
+      font-family: var(--font-primary);
+      font-size: 16px;
+      resize: none;
+      border: none;
+      outline: none;
+      box-shadow: 0.2rem 0.2rem 0.2rem var(--cl-shadow) inset;
+      background-color: var(--cl-form);
+      padding: 0.8rem 1rem;
+
+      &:focus ~ label {
+        color: var(--cl-main);
+      }
+    }
+  }
+
+  &__right {
+    display: grid;
+    grid-auto-rows: min-content 1fr;
+  }
+
+  &__data {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+
+    @media only screen and (max-width: 478px) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 2rem;
+    }
+  }
+
+  &__map {
+  }
+
+  &__info {
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-row-gap: 1rem;
+  }
+
+  &__block {
+    display: grid;
+    grid-row-gap: 4px;
+    &--title {
+      font-size: 1.6rem;
+    }
+    &--address {
+      padding-left: 6px;
+      font-size: 1.4rem;
+      color: var(--cl-grey);
+    }
+  }
+}

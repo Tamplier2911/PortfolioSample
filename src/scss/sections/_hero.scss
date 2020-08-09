@@ -1,0 +1,10 @@
+.section-hero {
+  &__content {
+    @include centerBlock;
+    @include sectionPadding;
+    display: grid;
+    grid-row-gap: 1rem;
+    text-align: center;
+    justify-items: center;
+  }
+}

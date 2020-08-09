@@ -1,0 +1,32 @@
+.header {
+  height: 8rem;
+  @media only screen and (max-width: 425px) {
+    height: 10rem;
+    padding-top: 2rem;
+  }
+
+  &__content {
+    @include centerBlock;
+
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media only screen and (max-width: 425px) {
+      grid-template-columns: 1fr;
+      align-items: center;
+      justify-items: center;
+      grid-row-gap: 2rem;
+    }
+
+    &--logo {
+      display: grid;
+      height: 100%;
+    }
+
+    &--links {
+      display: grid;
+      height: 100%;
+    }
+  }
+}

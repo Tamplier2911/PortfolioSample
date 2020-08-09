@@ -1,0 +1,29 @@
+.blocklist {
+  display: grid;
+  grid-row-gap: 4px;
+
+  &__title {
+    font-size: 1.6rem;
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  &__element {
+    display: grid;
+    align-items: center;
+    grid-column-gap: 4px;
+    grid-template-columns: min-content 1fr;
+
+    &--circle {
+      width: 6px;
+      height: 6px;
+      background-color: var(--cl-main);
+      border-radius: 50%;
+    }
+
+    &--text {
+      font-size: 1.5rem;
+    }
+  }
+}

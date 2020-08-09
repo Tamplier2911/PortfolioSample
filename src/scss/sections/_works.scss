@@ -1,0 +1,19 @@
+.section-works {
+  &__content {
+    @include centerBlock;
+    @include sectionPadding;
+
+    display: grid;
+    grid-row-gap: 2rem;
+  }
+
+  &__title {
+  }
+
+  &__works {
+    display: grid;
+    grid-row-gap: 2rem;
+    grid-column-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  }
+}

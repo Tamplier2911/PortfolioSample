@@ -1,0 +1,46 @@
+.links {
+  display: grid;
+  grid-template-columns: repeat(4, min-content);
+  grid-column-gap: 1rem;
+  align-content: center;
+  justify-content: end;
+
+  list-style: none;
+
+  &__li {
+    display: grid;
+    grid-row-gap: 5px;
+    text-transform: uppercase;
+    font-family: var(--font-secondary);
+    font-size: 1.8rem;
+  }
+
+  &__anchor {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: var(--cl-grey);
+      transition: color 0.3s;
+    }
+
+    &:hover,
+    &:active {
+      color: var(--cl-font);
+    }
+  }
+
+  &__active {
+    & a {
+      color: var(--cl-font) !important;
+    }
+
+    &::after {
+      content: "";
+      background-color: var(--cl-font);
+      display: inline-block;
+      width: 120%;
+      margin-left: -10%;
+      height: 2px;
+    }
+  }
+}

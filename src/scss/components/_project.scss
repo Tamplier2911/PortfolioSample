@@ -1,0 +1,47 @@
+.project {
+  display: grid;
+  grid-row-gap: 5px;
+  text-align: center;
+
+  &:last-child {
+    @media only screen and (max-width: 1146px) {
+      grid-column: span 2;
+    }
+    @media only screen and (max-width: 876px) {
+      grid-column: span 1;
+    }
+  }
+
+  &__photo {
+    box-shadow: 0.2rem 0.2rem 0.2rem var(--cl-shadow);
+    cursor: pointer;
+    height: 15rem;
+
+    &:hover img {
+      filter: grayscale(80%);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s;
+  }
+
+  &__name {
+    &--anchor {
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: var(--cl-font);
+        font-size: 1.4rem;
+        transition: color 0.3s;
+      }
+      &:hover,
+      &:active {
+        color: var(--cl-main);
+      }
+    }
+  }
+}
