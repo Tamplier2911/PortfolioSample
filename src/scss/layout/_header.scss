@@ -8,6 +8,7 @@
   &__content {
     @include centerBlock;
 
+    position: relative;
     height: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -27,6 +28,35 @@
     &--links {
       display: grid;
       height: 100%;
+
+      z-index: 55;
+      position: fixed;
+      height: 20%;
+      align-items: center;
+      right: 4rem;
+
+      @media only screen and (max-width: 425px) {
+        right: 0rem;
+      }
+
+      & ul {
+        @media only screen and (max-width: 425px) {
+          padding: 2rem;
+          display: grid;
+          justify-items: end;
+          grid-template-columns: 1fr;
+        }
+      }
     }
   }
+}
+
+.navFixed {
+}
+
+.navMinified {
+  padding: 2rem;
+  display: grid;
+  justify-items: end;
+  grid-template-columns: 1fr;
 }

@@ -1,38 +1,28 @@
-import axios from "axios";
+// styles
 import "./scss/index.scss";
 
 // generator function runtime - e.g. async / await enabler
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
-// elements
-const form = document.getElementById("form-input");
+// functionalities
+import { formEventListener } from "./form.js";
+import { renderInlineLoadedSvgs } from "./svgs";
+import { debouncedNavbarScrollHandler } from "./navbarOnScroll";
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
+// on page load
+window.onload = () => {
+  // elements
+  const form = document.getElementById("form-input");
 
-  // get form values
-  const name = document.getElementById("name-input");
-  const email = document.getElementById("email-input");
-  const message = document.getElementById("message-input");
+  // FORM BEHAVIOUR
+  form.addEventListener("submit", formEventListener);
 
-  console.log(name.value, email.value, message.value);
-  try {
-    const res = await axios({
-      method: "POST",
-      url: "https://www.applify-tech.com/api/v1/messages",
-      data: {
-        name: name.value,
-        email: email.value,
-        message: message.value,
-      },
-    });
-    console.log(res);
-  } catch (err) {
-    console.log(err.message);
-  }
+  // SVG RENDERING
+  renderInlineLoadedSvgs();
 
-  name.value = "";
-  email.value = "";
-  message.value = "";
-});
+  // NAVBAR STYLING BASED ON SCROLL
+  window.addEventListener("scroll", debouncedNavbarScrollHandler);
+
+  console.log("Back on track!");
+};

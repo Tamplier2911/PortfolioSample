@@ -13,6 +13,7 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
   font-size: 62.5%;
 
   @media only screen and (max-width: 48em) {
@@ -89,4 +90,7 @@ input[type="color"] {
   min-height: 100vh;
   background-image: url("http://api.thumbr.it/whitenoise-361x370.png?background=f5f5f5ff&noise=b3b3b3&density=28&opacity=9");
   margin: 1.5rem;
+  @media only screen and (max-width: 425px) {
+    margin: 0rem;
+  }
 }
